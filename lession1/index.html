@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict';
+
+        let temperatureC = +prompt('Введите температуру в градусах Цельсия для перевода в градусы Фаренгейта.'),
+            temperatureF = (9 / 5) * temperatureC + 32;
+        alert(temperatureC + ' градусов Цельсия = ' + temperatureF + ' градусов Фаренгейта.');
+
+        let admin,
+            newName = 'Василий';
+        admin = newName;
+        console.log(admin);
+
+        /* 
+        1. К 10 прибавляем 10 получаем 20
+        2. К 20(Число 20 приводится к строке) прибавлем '10' получаем 2010
+        3. 2010 присваиваем переменной result
+        4. Выводим в консоль переменную result c помощью console.log
+        */
+        let result = 10 + 10 + '10'
+        console.log(result);
+
+        /* 
+        1. К 10(Число приводится к строке) прибавляем '10' получаем 1010
+        2. К 1010 прибавлем 10(Число приводится к строке) получаем 101010
+        3. 101010 присваиваем переменной result
+        4. Выводим в консоль переменную result c помощью console.log
+        */
+        result = 10 + '10' + 10
+        console.log(result);
+
+        /* 
+        1. К 10 прибавляем 10 получаем 20
+        2. К 20 прибавлем +'10'(+ перед строкой приводит строку к числовому типу) получаем 30
+        3. 30 присваиваем переменной result
+        4. Выводим в консоль переменную result c помощью console.log
+        */
+        result = 10 + 10 + +'10'
+        console.log(result);
+
+        /* 
+        1. 10 делим на -""(-"" преодбразуется в -0) получаем -Infinity
+        2. -Infinity присваиваем переменной result
+        3. Выводим в консоль переменную result c помощью console.log
+        */
+        result = 10 / -"";
+        console.log(result);
+
+        /* 
+        1. 10 делим на +'2,5' получаем NaN (+'2,5' равно NaN т.к. дробное число пишется с точкой(2.5))
+        2. NaN присваиваем переменной result
+        3. Выводим в консоль переменную result c помощью console.log
+        */
+        result = 10 / +'2,5';
+        console.log(result);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict'
+
+        //Задание 1 
+        function numToObj(number) {
+            let obj1 = {
+            }
+            if (Number.isInteger(number) && number >= 0 && number <= 999) {
+                obj1.units = number % 10;
+                obj1.tens = Math.floor(number / 10 % 10);
+                obj1.hundreds = Math.floor(number / 100);
+                return obj1;
+            } else {
+                console.log('Вы ввели не соответствующее число');
+                return obj1;
+            }
+        }
+        numToObj('Привет');
+
+        //Задание 1.1 
+
+        //Стандарт ES5
+        // function Product(name, price) {
+        //     this.name = name;
+        //     this.price = price;
+        // }
+
+        // Product.prototype.make25PercentDiscount = function () {
+        //     this.price *= 0.75;
+        // };
+
+        // let Product1 = new Product('shoes', 400);
+        // Product1.make25PercentDiscount();
+
+        //Стандарт ES6
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let Product1 = new Product('shoes', 400);
+        Product1.make25PercentDiscount();
+
+
+        //Задание 1.2
+        /*function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (text) {
+            this.text = text;
+        }
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.costructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        let post1 = new AttachedPost('Ivan', 'Hello world', '25.01.2015');
+        post1.edit('Lorem ipsum');
+        post1.makeTextHighlighted();*/
+
+        class Post {
+            constructor(author, text, date) {
+                this.author = author,
+                    this.text = text,
+                    this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        class AttachedPost extends Post {
+            constructor(author, text, date) {
+                super(author, text, date)
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let attachedPost1 = new AttachedPost('Ivan', 'Hello world', '25.01.2015');
+        attachedPost1.edit('Lorem ipsum');
+        attachedPost1.makeTextHighlighted();
+
+    </script>
+</body>
+
+</html>
