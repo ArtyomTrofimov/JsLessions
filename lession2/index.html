@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use strict';
+
+        //Задание 1
+
+        let a = 1, b = 1, c, d;
+        //Пример 1
+        // c = 2 , т.к. инкремент в префиксной форме сначала увеличивает значение переменной a на 1, после присвает его c.
+        c = ++a;
+        alert(c); // ответ: 2
+        //Пример 2
+        //d = 1 , т.к. икремент в постфиксной форме сначала присваевает значение переменной b переменной d, а затем увеличивает b на 1.
+        d = b++;
+        alert(d); //ответ: 1
+        //Пример 3
+        // Сначала a увеличивается на 1(т.к. инкремент в префиксной форме и a = 2 , в примере 1 увеличилось на 1) получается 3, после к a прибавляем 2, получаем 5.
+        //В данном случае значение c презаписалось из примера 1
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+        //Пример 4
+        // b = 2 (в примере 2 увеличилось на 1), сначала складываются 2 и b, после присвается это значение переменной d, после b увеличивается на 1.
+        //В данном случае значение d презаписалось из примера 2
+        d = 2 + b++;
+        alert(d); //ответ: 4 
+        alert(a); //3(а было равно 1, в примерах 1 и 3 увеличилось на 1, что в итоге дало 3 ).
+        alert(b); //3(b было равно 1, в примерах 2 и 4 увеличилось на 1, что в итоге дало 3 ).
+
+        //Задание 2
+        a = 2;
+        //Сначала a умножается на 2 (т.к. у () приоритет выше), после к 1 прибавляется 4, в итоге получается 5.
+        let x = 1 + (a *= 2); // Ответ: 5
+
+
+        //Задание 3
+
+        a = 5,
+            b = 7;
+
+        if (a >= 0 && b >= 0) {
+            alert(a - b);
+        } else if (a < 0 && b < 0) {
+            alert(a * b);
+        } else if (a < 0 && b >= 0 || a >= 0 && b < 0) {
+            alert(a + b);
+        }
+
+        //Задание 4
+
+        function sumNum(a, b) {
+            return a + b;
+        }
+
+        function subNum(a, b) {
+            return a - b;
+        }
+
+        function multNum(a, b) {
+            return a * b;
+        }
+
+        function divNum(a, b) {
+            return a / b;
+        }
+
+        //Задание 5
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'сложение':
+                    alert(sumNum(arg1, arg2));
+                    break;
+                case 'вычитание':
+                    alert(subNum(arg1, arg2));
+                    break;
+                case 'умножение':
+                    alert(multNum(arg1, arg2));
+                    break;
+                case 'деление':
+                    alert(divNum(arg1, arg2));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        mathOperation(2, 4, 'деление');
+
+
+    </script>
+</body>
+
+</html>
