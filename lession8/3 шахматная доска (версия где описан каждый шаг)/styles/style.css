@@ -1,0 +1,51 @@
+
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.white {
+    background: #FFCF73;
+}
+
+.black {
+    background: #7a5000;
+}
+
+
+.whiteFigure {
+    color: white;
+}
+
+.whiteFigure:hover{
+    color: red;
+}
+
+.blackFigure {
+    color: black;
+}
+
+.blackFigure:hover{
+    color: red;
+}
+
+.selectedFigure{
+    color: red;
+    transform: translateY(-10px);
+}
+
+i {
+    font-size: 24px;
+    text-shadow: 0 0 3px grey;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
