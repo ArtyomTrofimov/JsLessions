@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //Задание 6
+        function bankCash() {
+            let userCash = prompt("Введи сумму которую хотите положить в банк"),
+                rubNames = ['рубль', 'рубля', 'рублей'],
+                lastChar = +userCash.charAt(userCash.length - 1);
+
+            if (+userCash >= 11 && +userCash <= 19) {
+                alert(`Ваша сумма в ${userCash} ${rubNames[2]} успешно зачислена.`);
+            } else if (lastChar == 1) {
+                alert(`Ваша сумма в ${userCash} ${rubNames[0]} успешно зачислена.`);
+            } else if (lastChar >= 2 && lastChar <= 4) {
+                alert(`Ваша сумма в ${userCash} ${rubNames[1]} успешно зачислена.`);
+            } else if (lastChar == 0 || lastChar >= 5 && lastChar <= 9) {
+                alert(`Ваша сумма в ${userCash} ${rubNames[2]} успешно зачислена.`);
+            }
+            bankCash();
+        }
+        bankCash();
+    </script>
+</body>
+
+</html>
